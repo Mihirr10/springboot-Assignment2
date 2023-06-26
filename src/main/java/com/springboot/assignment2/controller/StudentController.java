@@ -2,6 +2,7 @@ package com.springboot.assignment2.controller;
 
 import com.springboot.assignment2.entities.Student;
 import com.springboot.assignment2.service.StudentServiceImplementation;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,7 @@ public class StudentController {
 
 
   @PostMapping
-  public ResponseEntity<Student> createStudent(@RequestBody Student student) {
+  public ResponseEntity<Student> createStudent(@Valid @RequestBody Student student) {
     Student createdStudent = serviceImplementation.createStudent(student);
     return ResponseEntity.status(HttpStatus.CREATED).body(createdStudent);
   }
