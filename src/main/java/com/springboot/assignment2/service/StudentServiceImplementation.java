@@ -3,6 +3,7 @@ package com.springboot.assignment2.service;
 
 import com.springboot.assignment2.entities.Student;
 import com.springboot.assignment2.repositories.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -10,10 +11,9 @@ import java.util.List;
 @Component
 public class StudentServiceImplementation implements StudentService {
 
-
   private final StudentRepository studentRepository;
 
-
+  @Autowired
   public StudentServiceImplementation(StudentRepository studentRepository) {
     this.studentRepository = studentRepository;
   }
